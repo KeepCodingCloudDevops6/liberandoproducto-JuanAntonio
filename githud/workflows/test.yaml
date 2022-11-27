@@ -1,0 +1,37 @@
+name: Testing
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+  push:
+    branches:
+      - 'main'
+
+env:
+  PYTHON_VERSION: '3.10.6'
+
+name: Test
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Upgrade pip
+        run: pip3 install --upgrade pip
+
+      - name: Install python dependencies
+        run: pip3 install -r requirements.txt
+
+      - name: Run unit-tests
+        rub: pytest --cov  
+
+      - name: Run unit-tests and coverage
+        run: pytest -m "not integtest" --cov
