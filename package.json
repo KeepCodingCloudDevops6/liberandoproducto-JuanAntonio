@@ -2,7 +2,7 @@
     "name": "keepcoding-devops-liberando-productos",
     "repository": {
       "type": "git",
-      "url": "https://github.com/KeepCodingCloudDevops6/liberandoproductojuanantonio.git"
+      "url": "https://github.com/KeepCodingCloudDevops6/liberandoproducto-Juanantonio.git"
     },
     "dependencies": {
       "@semantic-release/exec": "6.0.2",
