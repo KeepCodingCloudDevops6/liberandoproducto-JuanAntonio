@@ -1,15 +1,13 @@
-name: Testing
-
 on:
   pull_request:
     branches:
-      - 'main'
+      - '*'
   push:
     branches:
-      - 'main'
+      - '*'
 
 env:
-  PYTHON_VERSION: '3.10.6'
+  PYTHON_VERSION: '3.8.12'
 
 name: Test
 jobs:
@@ -31,7 +29,7 @@ jobs:
         run: pip3 install -r requirements.txt
 
       - name: Run unit-tests
-        rub: pytest --cov  
-
-      - name: Run unit-tests and coverage
+        run: pytest --cov
+      
+      - name: Run unit-test and coverage
         run: pytest -m "not integtest" --cov
