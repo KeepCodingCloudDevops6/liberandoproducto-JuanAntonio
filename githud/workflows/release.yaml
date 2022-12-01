@@ -37,10 +37,10 @@
           VERSION: ${{ env.VERSION }}
 
        - name: Build to DockerHub
-        run: docker build -t jacano/liberandoproducto:v1
+        run: docker build -t jacano1986/liberandoproducto:latest .
 
       - name: Push to DockerHub
-        run: docker push jacano/liberandoproducto:v1  
+        run: docker push jacano1986/liberandoproducto:latest
 
     outputs:
       version: ${{ env.VERSION }}
